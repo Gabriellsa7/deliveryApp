@@ -30,21 +30,23 @@ const Header = () => {
         <Image width={100} height={30} src={"/Logo.svg"} alt="Logo" />
       </div>
       <Dialog>
-        <DialogTrigger asChild>
-          {/* {!isOpen ? ( */}
-          <Button
-            size="icon"
-            variant="outline"
-            className="border-none bg-transparent"
-            onClick={handleMenuHamburguer}
-          >
-            <MenuIcon />
-          </Button>
-          {/* ) : (
+        <div className="flex-col">
+          <DialogTrigger asChild>
+            {/* {!isOpen ? ( */}
+            <Button
+              size="icon"
+              variant="outline"
+              className="border-none bg-transparent"
+              onClick={handleMenuHamburguer}
+            >
+              <MenuIcon />
+            </Button>
+            {/* ) : (
             <Button>X</Button>
           )} */}
-        </DialogTrigger>
-        <DialogContent>Test</DialogContent>
+          </DialogTrigger>
+          <DialogContent>Test</DialogContent>
+        </div>
       </Dialog>
     </div>
   );
