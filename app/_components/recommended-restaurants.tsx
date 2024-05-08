@@ -1,11 +1,9 @@
-import { ArrowDown, ChevronRightIcon } from "lucide-react";
-import products from "./_lists/recommended-listing";
-import Image from "next/image";
-import RecommendedItem from "./recommended-item";
+import { ChevronRightIcon } from "lucide-react";
+import RecommendedRestaurantItem from "./recommended-restaurant-item";
 
-const Recommended = () => {
+const RecommendedRestaurants = () => {
   return (
-    <div className="w-full space-y-2">
+    <div>
       <div className="flex items-center justify-between">
         <span className="text-base font-bold leading-6">
           Recommended Orders
@@ -15,9 +13,9 @@ const Recommended = () => {
           <ChevronRightIcon color="#EA1D2C" size={16} />
         </div>
       </div>
-      <RecommendedItem />
+      <RecommendedRestaurantItem />
     </div>
   );
 };
 
-export default Recommended;
+export default RecommendedRestaurants;

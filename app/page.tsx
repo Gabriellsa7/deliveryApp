@@ -2,6 +2,7 @@ import CategoryList from "./_components/category-list";
 import Header from "./_components/header";
 import PromoBanner from "./_components/promo-banner";
 import Recommended from "./_components/recommended";
+import RecommendedRestaurants from "./_components/recommended-restaurants";
 import Search from "./_components/search";
 
 export default function Home() {
@@ -22,6 +23,9 @@ export default function Home() {
       </div>
       <div className="px-5 pt-6">
         <PromoBanner src={"/PromoBanner2.svg"} alt="From R$17.90 on snacks" />
+      </div>
+      <div className="px-5 pt-6">
+        <RecommendedRestaurants />
       </div>
     </>
   );
