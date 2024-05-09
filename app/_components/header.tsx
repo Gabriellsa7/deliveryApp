@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import x from "@/assets/Close.svg";
-import profile from "@/assets/Profile.png";
 import {
   Dialog,
   DialogClose,
   DialogContent,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
+import Profile from "./profile";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +22,7 @@ const Header = () => {
 
   const handleCloseMenu = () => {
     setIsOpen((isOpen) => !isOpen);
+    document.body.classList.remove("overflow-hidden");
   };
 
   return (
@@ -31,21 +32,14 @@ const Header = () => {
       </div>
       <div>
         {isOpen ? (
-          <Button
-            size="icon"
-            variant="outline"
-            className="border-none bg-transparent"
-            onClick={handleMenuHamburguer}
-          >
-            <MenuIcon />
-          </Button>
-        ) : (
           <>
             <div
-              className="fixed top-0 left-0 h-screen w-[20%] bg-black opacity-50 z-50"
+              className={
+                "fixed top-0 left-0 h-screen w-[20%] bg-black opacity-50 z-50 transition-opacity"
+              }
               onClick={handleCloseMenu}
             ></div>
-            <div className="fixed top-0 right-0 z-10 flex flex-col h-screen w-4/5 bg-white items-center justify-start">
+            <div className="fixed top-0 right-0 z-10 flex flex-col h-screen w-4/5 bg-white items-center justify-start transform transition-transform duration-300 ease-in-out translate-x-0">
               <div className="flex items-center justify-between w-full pt-6 px-5">
                 <h2>Menu</h2>
                 <button onClick={handleCloseMenu}>
@@ -53,18 +47,7 @@ const Header = () => {
                 </button>
               </div>
               <div className="flex flex-col gap-4 pt-6 px-5 w-full">
-                <div className="flex items-center gap-4">
-                  <Image
-                    width={60}
-                    height={30}
-                    src={profile}
-                    alt="Profile image"
-                  />
-                  <div className="flex flex-col gap-1">
-                    <p>Gabriel Santana Santos</p>
-                    <p>gabriel@gmail.com</p>
-                  </div>
-                </div>
+                <Profile />
               </div>
               <div className="flex flex-col gap-4 pt-12 px-5 w-full">
                 <div className="flex items-center gap-4 bg-red-600 py-3 px-4 rounded-2xl ">
@@ -74,27 +57,17 @@ const Header = () => {
               </div>
             </div>
           </>
+        ) : (
+          <Button
+            size="icon"
+            variant="outline"
+            className="border-none bg-transparent"
+            onClick={handleMenuHamburguer}
+          >
+            <MenuIcon />
+          </Button>
         )}
       </div>
-      {/* <Dialog>
-        <div className="flex-col">
-          <DialogTrigger asChild>
-            {!isOpen ? (
-            <Button
-              size="icon"
-              variant="outline"
-              className="border-none bg-transparent"
-              onClick={handleMenuHamburguer}
-            >
-              <MenuIcon />
-            </Button>
-            { ) : (
-            <Button>X</Button>
-          )} }
-          </DialogTrigger>
-          <DialogContent>Test</DialogContent>
-        </div>
-      </Dialog> */}
     </header>
   );
 };
