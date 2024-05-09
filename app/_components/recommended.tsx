@@ -1,6 +1,4 @@
-import { ArrowDown, ChevronRightIcon } from "lucide-react";
-import products from "./_lists/recommended-listing";
-import Image from "next/image";
+import { ChevronRightIcon } from "lucide-react";
 import RecommendedItem from "./recommended-item";
 
 const Recommended = () => {

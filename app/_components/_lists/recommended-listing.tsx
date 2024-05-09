@@ -17,7 +17,7 @@ const products = [
     priceWithDiscount: 0,
   },
   {
-    name: "Chicken in Sauce",
+    name: "Citrus Shrimp",
     img: citrusShrimp,
     price: 20.0,
     restaurantName: "Bistro Verdejante",
@@ -27,7 +27,7 @@ const products = [
     priceWithDiscount: 0,
   },
   {
-    name: "Chicken in Sauce",
+    name: "Classic Ramen",
     img: classicRamen,
     price: 20.0,
     restaurantName: "Bistro Verdejante",
@@ -37,7 +37,7 @@ const products = [
     priceWithDiscount: 0,
   },
   {
-    name: "Chicken in Sauce",
+    name: "Green Tempura",
     img: greenTempura,
     price: 20.0,
     restaurantName: "Bistro Verdejante",
@@ -47,7 +47,7 @@ const products = [
     priceWithDiscount: 0,
   },
   {
-    name: "Chicken in Sauce",
+    name: "Hot Roll Combo",
     img: hotRollCombo,
     price: 20.0,
     restaurantName: "Bistro Verdejante",
@@ -57,7 +57,7 @@ const products = [
     priceWithDiscount: 0,
   },
   {
-    name: "Chicken in Sauce",
+    name: "Supreme Picanha",
     img: supremePicanha,
     price: 20.0,
     restaurantName: "Bistro Verdejante",

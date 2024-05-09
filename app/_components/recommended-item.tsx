@@ -6,11 +6,13 @@ const RecommendedItem = () => {
   return (
     <div className="flex gap-4 overflow-x-auto">
       {products.map((product) => (
-        <div key={product.name}>
-          <div className="relative">
+        <div key={product.name} className="w-full space-y-3">
+          <div className="relative w-full">
             <Image
               src={product.img}
               alt="Logo"
+              width={200}
+              height={200}
               className="rounded-lg object-cover shadow-md"
             />
             {product.discount === true ? (
