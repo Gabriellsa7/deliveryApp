@@ -1,71 +1,33 @@
-import chickenInSauce from "@/assets/recommended/chicken_in_sauce.png";
-import citrusShrimp from "@/assets/recommended/citrus_shrimp.png";
-import classicRamen from "@/assets/recommended/classic_ramen.png";
-import greenTempura from "@/assets/recommended/green_tempura.png";
-import hotRollCombo from "@/assets/recommended/hot_roll_combo.png";
-import supremePicanha from "@/assets/recommended/supreme_picanha.png";
+import restaurant1 from "@/assets/recommended-restaurant/restaurant1.png";
+import restaurant2 from "@/assets/recommended-restaurant/restaurant2.png";
+import restaurant3 from "@/assets/recommended-restaurant/restaurant3.png";
+import restaurant4 from "@/assets/recommended-restaurant/restaurant4.png";
 
-const products = [
+const restaurants = [
   {
-    name: "Chicken in Sauce",
-    img: chickenInSauce,
-    price: 20.0,
-    restaurantName: "Bistro Verdejante",
-    discount: true,
-    discountPercent: 0.2,
-    discountValue: "20%",
-    priceWithDiscount: 0,
+    name: "Sushidojo",
+    img: restaurant1,
+    shipping: "Free shipping",
+    deliveryTime: "45min",
   },
   {
-    name: "Chicken in Sauce",
-    img: citrusShrimp,
-    price: 20.0,
-    restaurantName: "Bistro Verdejante",
-    discount: true,
-    discountPercent: 0.2,
-    discountValue: "20%",
-    priceWithDiscount: 0,
+    name: "Bistrô Verdejante",
+    img: restaurant2,
+    shipping: "Free shipping",
+    deliveryTime: "50min",
   },
   {
-    name: "Chicken in Sauce",
-    img: classicRamen,
-    price: 20.0,
-    restaurantName: "Bistro Verdejante",
-    discount: true,
-    discountPercent: 0.2,
-    discountValue: "20%",
-    priceWithDiscount: 0,
+    name: "Restaurant3",
+    img: restaurant3,
+    shipping: "Free shipping",
+    deliveryTime: "30min",
   },
   {
-    name: "Chicken in Sauce",
-    img: greenTempura,
-    price: 20.0,
-    restaurantName: "Bistro Verdejante",
-    discount: true,
-    discountPercent: 0.2,
-    discountValue: "20%",
-    priceWithDiscount: 0,
-  },
-  {
-    name: "Chicken in Sauce",
-    img: hotRollCombo,
-    price: 20.0,
-    restaurantName: "Bistro Verdejante",
-    discount: true,
-    discountPercent: 0.2,
-    discountValue: "20%",
-    priceWithDiscount: 0,
-  },
-  {
-    name: "Chicken in Sauce",
-    img: supremePicanha,
-    price: 20.0,
-    restaurantName: "Bistro Verdejante",
-    discount: true,
-    discountPercent: 0.2,
-    discountValue: "20%",
-    priceWithDiscount: 0,
+    name: "Restaurant4",
+    img: restaurant4,
+    shipping: "Free shipping",
+    deliveryTime: "25min",
   },
 ];
 
-export default products;
+export default restaurants;

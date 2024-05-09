@@ -4,14 +4,13 @@ import { ArrowDown } from "lucide-react";
 
 const RecommendedItem = () => {
   return (
-    <div className="flex gap-4 overflow-scroll">
+    <div className="flex gap-4 overflow-x-auto">
       {products.map((product) => (
         <div key={product.name}>
           <div className="relative">
             <Image
               src={product.img}
               alt="Logo"
-              sizes="100%"
               className="rounded-lg object-cover shadow-md"
             />
             {product.discount === true ? (
@@ -26,7 +25,7 @@ const RecommendedItem = () => {
             )}
           </div>
           <div>
-            <span className="font-normal text-xs text-nowrap">
+            <span className="font-normal text-sm text-nowrap text-[#323232]">
               {product.name}
             </span>
             <div className="flex items-center gap-2">

@@ -1,46 +1,30 @@
 import Image from "next/image";
-import products from "./_lists/recommended-restaurant-listing";
-import { ArrowDown } from "lucide-react";
+import restaurants from "./_lists/recommended-restaurant-listing";
 
 const RecommendedRestaurantItem = () => {
   return (
-    <div className="flex gap-4 overflow-scroll">
-      {products.map((product) => (
-        <div key={product.name}>
+    <div className="flex gap-4 pt-4 overflow-scroll">
+      {restaurants.map((restaurant) => (
+        <div key={restaurant.name}>
           <div className="relative">
             <Image
-              src={product.img}
+              src={restaurant.img}
               alt="Logo"
-              sizes="100%"
+              width={200}
+              height={200}
               className="rounded-lg object-cover shadow-md"
             />
-            {product.discount === true ? (
-              <div className="flex items-center bg-[#EA1D2C] py-[2px] px-2 rounded-xl absolute top-2 left-2">
-                <ArrowDown size={7} />
-                <span className="text-xs font-bold">
-                  {product.discountValue}
-                </span>
-              </div>
-            ) : (
-              ""
-            )}
           </div>
           <div>
-            <span className="font-normal text-xs text-nowrap">
-              {product.name}
+            <span className="font-bold text-sm text-nowrap text-[#323232]">
+              {restaurant.name}
             </span>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-base">
-                R$
-                {product.discount
-                  ? (
-                      product.price -
-                      product.price * product.discountPercent
-                    ).toFixed(2)
-                  : product.price.toFixed(2)}
+              <span className="font-normal text-xs text-nowrap text-[#7E8392]">
+                {restaurant.shipping}
               </span>
-              <span className="font-normal text-xs line-through text-gray-400">
-                R${product.price}
+              <span className="font-normal text-xs text-[#7E8392]">
+                {restaurant.deliveryTime}
               </span>
             </div>
           </div>
