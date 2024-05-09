@@ -1,11 +1,4 @@
 "use client";
-import {
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/app/_components/ui/sheet";
 import { MenuIcon, MenuSquareIcon, Sheet } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -25,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-6">
+    <header className="flex items-center justify-between p-6">
       <div>
         <Image width={100} height={30} src={"/Logo.svg"} alt="Logo" />
       </div>
@@ -48,7 +41,7 @@ const Header = () => {
           <DialogContent>Test</DialogContent>
         </div>
       </Dialog>
-    </div>
+    </header>
   );
 };
 
