@@ -2,12 +2,9 @@ import {
   CupSodaIcon,
   FishIcon,
   GrapeIcon,
-  HeartIcon,
-  HomeIcon,
   IceCreamConeIcon,
   PizzaIcon,
   SandwichIcon,
-  ScrollTextIcon,
   UtensilsIcon,
 } from "lucide-react";
 

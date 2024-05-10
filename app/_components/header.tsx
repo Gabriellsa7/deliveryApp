@@ -1,21 +1,9 @@
 "use client";
-import {
-  HeartIcon,
-  HomeIcon,
-  LogOutIcon,
-  MenuIcon,
-  ScrollTextIcon,
-} from "lucide-react";
+import { LogOutIcon, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import x from "@/assets/Close.svg";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogTrigger,
-} from "@radix-ui/react-dialog";
 import Profile from "./profile";
 import PrimaryMenuList from "./primary-menu-list";
 import SecondaryMenuList from "./secondary-menu-list";
