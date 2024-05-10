@@ -5,7 +5,6 @@ import PromoBanner from "./_components/promo-banner";
 import Recommended from "./_components/recommended";
 import RecommendedRestaurants from "./_components/recommended-restaurants";
 import Search from "./_components/search";
-import e from "@/assets/recommended/citrus_shrimp.png";
 
 export default function Home() {
   return (
