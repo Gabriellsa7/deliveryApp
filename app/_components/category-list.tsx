@@ -5,10 +5,10 @@ import types from "./_lists/category-listing";
 const CategoryList = () => {
   return (
     <div className="grid grid-cols-2 gap-4 ">
-      {types.map(({ name, icons }) => (
+      {types.map(({ name, icons, id }) => (
         <div
           className="flex items-center justify-center gap-3 rounded-full bg-white px-4 py-3 shadow-md"
-          key={name}
+          key={id}
         >
           <Image src={icons} alt="Logo" width={40} height={40} />
           <span className="font-bold text-sm">{name}</span>

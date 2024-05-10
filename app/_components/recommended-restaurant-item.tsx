@@ -5,7 +5,7 @@ const RecommendedRestaurantItem = () => {
   return (
     <div className="flex gap-4 pt-4 overflow-scroll">
       {restaurants.map((restaurant) => (
-        <div key={restaurant.name}>
+        <div key={restaurant.id}>
           <div className="relative">
             <Image
               src={restaurant.img}
