@@ -35,7 +35,7 @@ const Header = () => {
               }
               onClick={handleCloseMenu}
             ></div>
-            <div className="fixed top-0 right-0 z-10 flex flex-col h-screen w-4/5 overflow-y-auto touch-pan-y bg-white items-center justify-start transform transition-transform duration-300 ease-in-out translate-x-0">
+            <div className="fixed top-0 right-0 z-10 flex flex-col h-screen w-4/5 overflow-y-auto touch-auto bg-white items-center justify-start transform transition-transform duration-300 ease-in-out translate-x-0">
               <div className="flex items-center justify-between w-full pt-6 px-5">
                 <h2>Menu</h2>
                 <button onClick={handleCloseMenu}>
