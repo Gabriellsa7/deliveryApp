@@ -25,7 +25,6 @@ const Header = () => {
 
   const handleMenuHamburguer = () => {
     setIsOpen(!isOpen);
-    document.body.classList.add("overflow-hidden");
   };
 
   const handleCloseMenu = () => {
