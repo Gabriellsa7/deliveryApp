@@ -1,5 +1,11 @@
 "use client";
-import { HomeIcon, MenuIcon } from "lucide-react";
+import {
+  HeartIcon,
+  HomeIcon,
+  LogOutIcon,
+  MenuIcon,
+  ScrollTextIcon,
+} from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./ui/button";
@@ -11,6 +17,8 @@ import {
   DialogTrigger,
 } from "@radix-ui/react-dialog";
 import Profile from "./profile";
+import PrimaryMenuList from "./primary-menu-list";
+import SecondaryMenuList from "./secondary-menu-list";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,10 +57,14 @@ const Header = () => {
               <div className="flex flex-col gap-4 pt-6 px-5 w-full">
                 <Profile />
               </div>
-              <div className="flex flex-col gap-4 pt-12 px-5 w-full">
-                <div className="flex items-center gap-4 bg-red-600 py-3 px-4 rounded-2xl ">
-                  <HomeIcon color="#FFFFFF" />
-                  <p className="text-white">Home</p>
+              <PrimaryMenuList />
+              <SecondaryMenuList />
+              <div className="flex flex-col gap-4 pt-1 px-5 w-full">
+                <div className="flex items-center gap-4 py-3 px-4 rounded-2xl ">
+                  <LogOutIcon size={16} color="#323232" />
+                  <p className="text-sm font-normal text-[#323232]">
+                    Log out of account
+                  </p>
                 </div>
               </div>
             </div>
