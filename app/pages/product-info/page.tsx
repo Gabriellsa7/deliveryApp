@@ -3,9 +3,17 @@ import { Button } from "@/app/_components/ui/button";
 import products from "../../_components/_lists/recommended-listing";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
-import { ArrowDown, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import {
+  AlarmClock,
+  ArrowDown,
+  BikeIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  Clock1,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import restaurants from "@/app/_components/_lists/recommended-restaurant-listing";
+import { Card } from "@/app/_components/ui/card";
 
 interface ProductPageProps {
   id: number;
@@ -92,7 +100,7 @@ const ProductPageInfo = () => {
         </Button>
       </div>
       <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white py-5">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 mx-5">
           <div>
             <Image
               src={restaurants[product.id].img}
@@ -106,8 +114,10 @@ const ProductPageInfo = () => {
             {restaurants[product.id].name}
           </span>
         </div>
-        <h1 className="text-xl font-bold">{product.name}</h1>
-        <div className="flex items-center justify-between px-5">
+        <div className="mx-5 mt-2 mb-3">
+          <h1 className="text-xl font-bold">{product.name}</h1>
+        </div>
+        <div className="flex items-center justify-between mx-5">
           <div className="flex flex-col">
             <div className="flex items-center gap-1">
               <span className="font-bold text-xl">
@@ -154,6 +164,22 @@ const ProductPageInfo = () => {
           </div>
         </div>
       </div>
+      <Card className="mt-6 mx-6 flex justify-around py-3">
+        <div className="flex flex-col items-center gap-1">
+          <div className="flex items-center gap-2">
+            <span className="font-normal text-sm text-gray-400">delivery</span>
+            <BikeIcon size={18} color="#9ca3af" />
+          </div>
+          <span className="font-bold text-base">Free</span>
+        </div>
+        <div className="flex flex-col items-center gap-1">
+          <div className="flex items-center gap-2">
+            <span className="font-normal text-sm text-gray-400">delivery</span>
+            <AlarmClock size={18} color="#9ca3af" />
+          </div>
+          <span className="font-bold text-base">40min</span>
+        </div>
+      </Card>
     </div>
   );
 };
