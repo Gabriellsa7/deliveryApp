@@ -7,7 +7,10 @@ const RecommendedItem = () => {
   return (
     <div className="flex gap-4 overflow-x-auto">
       {products.map((product) => (
-        <Link href={`/pages/product-info/${product.id}`} key={product.id}>
+        <Link
+          href={`/pages/product-info?name=${product.name}`}
+          key={product.id}
+        >
           <div key={product.id} className="w-full space-y-3">
             <div className="relative w-full">
               <Image

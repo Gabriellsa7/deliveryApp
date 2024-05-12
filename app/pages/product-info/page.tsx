@@ -22,13 +22,15 @@ const ProductPageInfo = () => {
       try {
         // Get the URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get("id") || product?.id;
+        const name = urlParams.get("name") || product?.name;
 
         // Combine recipes and recentRecipes into one array
         const generalRecipes = products;
 
         // Find the recipe based on the name in the combined list
-        const productData = generalRecipes.find((product) => product.id === id);
+        const productData = generalRecipes.find(
+          (product) => product.name === name
+        );
 
         if (productData) {
           // Define product data in the state
@@ -43,9 +45,9 @@ const ProductPageInfo = () => {
 
     // Call the data fetch function when the component mounts
     fetchRecipeData();
-  }, [product?.id]);
+  }, [product?.name]);
 
-  if (!product?.id) {
+  if (!product?.name) {
     return <main>Loading...</main>;
   }
 
