@@ -11,7 +11,7 @@ const RecommendedItem = () => {
           href={`/pages/product-info?name=${product.name}`}
           key={product.id}
         >
-          <div key={product.id} className="w-full space-y-3">
+          <div className="w-full space-y-3">
             <div className="relative w-full">
               <Image
                 src={product.img}
@@ -22,8 +22,8 @@ const RecommendedItem = () => {
               />
               {product.discount === true ? (
                 <div className="flex items-center bg-[#EA1D2C] py-[2px] px-2 rounded-xl absolute top-2 left-2">
-                  <ArrowDown size={7} />
-                  <span className="text-xs font-bold">
+                  <ArrowDown size={7} color="#FFFFFF" />
+                  <span className="text-xs font-bold text-white">
                     {product.discountValue}
                   </span>
                 </div>

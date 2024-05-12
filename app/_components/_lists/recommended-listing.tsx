@@ -1,4 +1,4 @@
-import chickenInSauce from "@/assets/recommended/chicken_in_sauce.png";
+import chickenInSauce from "@/assets/recommended/new_chicken_in_sauce.jpeg";
 import citrusShrimp from "@/assets/recommended/citrus_shrimp.png";
 import classicRamen from "@/assets/recommended/classic_ramen.png";
 import greenTempura from "@/assets/recommended/green_tempura.png";
