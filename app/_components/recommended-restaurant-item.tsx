@@ -3,7 +3,7 @@ import restaurants from "./_lists/recommended-restaurant-listing";
 
 const RecommendedRestaurantItem = () => {
   return (
-    <div className="flex gap-4 pt-4 overflow-scroll">
+    <div className="flex gap-4 pt-4 overflow-scroll [&::-webkit-scrollbar]:hidden">
       {restaurants.map((restaurant) => (
         <div key={restaurant.id}>
           <div className="relative">

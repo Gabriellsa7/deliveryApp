@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const RecommendedItem = () => {
   return (
-    <div className="flex gap-4 overflow-x-auto">
+    <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
       {products.map((product) => (
         <Link
           href={`/pages/product-info?name=${product.name}`}
