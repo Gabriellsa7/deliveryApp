@@ -1,6 +1,7 @@
 import Image from "next/image";
 import juices from "./mocks/juices-list";
 import { ArrowDown } from "lucide-react";
+import { Button } from "@/app/_components/ui/button";
 
 const Recommendation = () => {
   return (
@@ -46,6 +47,11 @@ const Recommendation = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="py-6">
+        <Button className="w-full bg-red-600">
+          <span className="font-bold text-sm">Add to cart</span>
+        </Button>
       </div>
     </section>
   );
