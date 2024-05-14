@@ -3,17 +3,12 @@ import { Button } from "@/app/_components/ui/button";
 import products from "../../_components/_lists/recommended-listing";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
-import {
-  AlarmClock,
-  ArrowDown,
-  BikeIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  Clock1,
-} from "lucide-react";
+import { ArrowDown, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import restaurants from "@/app/_components/_lists/recommended-restaurant-listing";
-import { Card } from "@/app/_components/ui/card";
+import DeliveryInfo from "./_components/delivery-info";
+import About from "./_components/about";
+import Recommendation from "./_components/recommendation";
 
 interface ProductPageProps {
   id: number;
@@ -86,7 +81,7 @@ const ProductPageInfo = () => {
       <div className="relative h-[360px] w-full">
         <Image
           src={product?.img as string}
-          alt="Produto"
+          alt="Product image"
           sizes="100%"
           className="object-cover"
           fill
@@ -164,22 +159,9 @@ const ProductPageInfo = () => {
           </div>
         </div>
       </div>
-      <Card className="mt-6 mx-6 flex justify-around py-3">
-        <div className="flex flex-col items-center gap-1">
-          <div className="flex items-center gap-2">
-            <span className="font-normal text-sm text-gray-400">delivery</span>
-            <BikeIcon size={18} color="#9ca3af" />
-          </div>
-          <span className="font-bold text-base">Free</span>
-        </div>
-        <div className="flex flex-col items-center gap-1">
-          <div className="flex items-center gap-2">
-            <span className="font-normal text-sm text-gray-400">delivery</span>
-            <AlarmClock size={18} color="#9ca3af" />
-          </div>
-          <span className="font-bold text-base">40min</span>
-        </div>
-      </Card>
+      <DeliveryInfo />
+      <About />
+      <Recommendation />
     </div>
   );
 };
