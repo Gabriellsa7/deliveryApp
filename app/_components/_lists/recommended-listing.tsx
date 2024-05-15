@@ -1,9 +1,9 @@
 import chickenInSauce from "@/assets/recommended/new_chicken_in_sauce.jpeg";
-import citrusShrimp from "@/assets/recommended/citrus_shrimp.png";
-import classicRamen from "@/assets/recommended/classic_ramen.png";
-import greenTempura from "@/assets/recommended/green_tempura.png";
-import hotRollCombo from "@/assets/recommended/hot_roll_combo.png";
-import supremePicanha from "@/assets/recommended/supreme_picanha.png";
+import citrusShrimp from "@/assets/recommended/citrus-shrimp.jpeg";
+import classicRamen from "@/assets/recommended/classic-ramen.jpeg";
+import greenTempura from "@/assets/recommended/green-tempura.jpeg";
+import hotRollCombo from "@/assets/recommended/hot-holl-combo.webp";
+import supremePicanha from "@/assets/recommended/supreme-picanha.jpeg";
 
 const products = [
   {
