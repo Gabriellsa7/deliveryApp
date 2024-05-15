@@ -16,9 +16,8 @@ const RecommendedItem = () => {
               <Image
                 src={product.img}
                 alt="Logo"
-                width={200}
-                height={200}
-                className="rounded-lg object-cover shadow-md"
+                sizes="100%"
+                className="rounded-lg object-cover shadow-md min-h-[110px] min-w-[110px]"
               />
               {product.discount === true ? (
                 <div className="flex items-center bg-[#EA1D2C] py-[2px] px-2 rounded-xl absolute top-2 left-2">
