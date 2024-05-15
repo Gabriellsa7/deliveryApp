@@ -10,9 +10,7 @@ const RecommendedRestaurantItem = () => {
             <Image
               src={restaurant.img}
               alt="Logo"
-              width={200}
-              height={200}
-              className="rounded-lg object-cover shadow-md"
+              className="rounded-lg object-cover shadow-md min-h-[110px] min-w-[200px]"
             />
           </div>
           <div>
