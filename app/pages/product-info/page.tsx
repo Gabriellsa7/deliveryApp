@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import restaurants from "@/app/_components/_lists/recommended-restaurant-listing";
 import DeliveryInfo from "./_components/delivery-info";
 import About from "./_components/about";
-import Recommendation from "./_components/recommendation";
+import Juices from "@/app/_components/juices";
 
 interface ProductPageProps {
   id: number;
@@ -161,7 +161,7 @@ const ProductPageInfo = () => {
       </div>
       <DeliveryInfo />
       <About />
-      <Recommendation />
+      <Juices />
     </div>
   );
 };
