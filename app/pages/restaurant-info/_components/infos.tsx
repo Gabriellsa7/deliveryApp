@@ -85,7 +85,7 @@ const Infos = () => {
             className="rounded-full object-cover"
           />
           <span className="font-bold text-lg text-[#323232]">
-            {restaurants[restaurant.id].name}
+            {restaurant.name}
           </span>
         </div>
         <div className="flex items-center gap-1 mx-5 py-1 px-[10px] bg-[#323232] rounded-2xl ">
