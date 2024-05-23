@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Juices = () => {
   return (
-    <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden mt-3 mx-6">
+    <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden my-3 mx-6">
       {juices.map((juice) => (
         <div key={juice.name} className="w-full space-y-2">
           <div className="relative w-full">
