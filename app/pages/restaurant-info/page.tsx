@@ -4,10 +4,11 @@ import Infos from "./_components/infos";
 import MoreOrders from "./_components/more-orders";
 import Juices from "@/app/_components/juices";
 import JapaneseFood from "./_components/japanese-food";
+import AddCartComponent from "./_components/see-cart";
 
 const RestaurantInfo = () => {
   return (
-    <div>
+    <div className="relative">
       <Infos />
       <DeliveryInfo />
       <Category />
@@ -23,6 +24,7 @@ const RestaurantInfo = () => {
         <h1 className="font-bold text-base">Juices</h1>
       </div>
       <Juices />
+      <AddCartComponent />
     </div>
   );
 };
