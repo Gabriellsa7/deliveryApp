@@ -9,6 +9,7 @@ import restaurants from "@/app/_components/_lists/recommended-restaurant-listing
 import DeliveryInfo from "./_components/delivery-info";
 import About from "./_components/about";
 import Juices from "@/app/_components/juices";
+import AddCartButton from "./_components/add-cart-button";
 
 interface ProductPageProps {
   id: number;
@@ -162,6 +163,7 @@ const ProductPageInfo = () => {
       <DeliveryInfo />
       <About />
       <Juices />
+      <AddCartButton />
     </div>
   );
 };
