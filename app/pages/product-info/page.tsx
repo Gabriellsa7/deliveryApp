@@ -11,7 +11,7 @@ import About from "./_components/about";
 import Juices from "@/app/_components/juices";
 import AddCartButton from "./_components/add-cart-button";
 
-interface ProductPageProps {
+export interface ProductPageProps {
   id: number;
   name?: string;
   description?: string;
@@ -20,6 +20,7 @@ interface ProductPageProps {
   discount?: boolean;
   discountValue?: string;
   discountPercent?: number;
+  quantity?: number;
 }
 
 const ProductPageInfo = () => {
@@ -163,7 +164,7 @@ const ProductPageInfo = () => {
       <DeliveryInfo />
       <About />
       <Juices />
-      <AddCartButton />
+      <AddCartButton product={product} />
     </div>
   );
 };
