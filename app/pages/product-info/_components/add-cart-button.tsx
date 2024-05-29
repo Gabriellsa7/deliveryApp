@@ -1,46 +1,53 @@
 "use client";
 import { Button } from "@/app/_components/ui/button";
 import { Product } from "@/app/context/cart-context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AddCartButton = ({ product }: { product: Product }) => {
   const [cart, setCart] = useState<Product[]>([]);
 
+  useEffect(() => {
+    // Fetch initial cart state from localStorage or API (if needed)
+    const fetchCart = async () => {
+      const cartStr = localStorage.getItem("cart");
+      if (cartStr) {
+        setCart(JSON.parse(cartStr) as Product[]);
+      } else {
+        // Optionally fetch cart from server if not in localStorage
+        const response = await fetch("/api/products-cart"); // Replace with your API endpoint
+        const serverCart = await response.json();
+        setCart(serverCart);
+      }
+    };
+    fetchCart();
+  }, []);
+
   const addToCart = async (product: Product) => {
-    const existingProductIndex = cart.findIndex(
-      (item) => item.id === product.id
-    );
-    let updatedCart;
-
-    const productQuantity = product.quantity ?? 1;
-
-    if (existingProductIndex >= 0) {
-      updatedCart = [...cart];
-      updatedCart[existingProductIndex].quantity =
-        (updatedCart[existingProductIndex].quantity ?? 0) + productQuantity;
-    } else {
-      updatedCart = [...cart, { ...product, quantity: productQuantity }];
-    }
+    const { id, name, price, quantity = 1 } = product;
+    const existingProduct = cart.find((item) => item.id === id);
 
     try {
       const response = await fetch("/api/products-cart", {
-        method: "POST",
+        method: existingProduct ? "PUT" : "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(product),
+        body: JSON.stringify({ productId: id, name, price, quantity }),
       });
 
       if (response.ok) {
-        const updatedCartFromServer = await response.json();
-        setCart(updatedCartFromServer);
+        const updatedCart: Product[] = await response.json();
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
       } else {
-        console.error("Failed to add to cart");
+        const errorData = await response.json();
+        console.error("Failed to add to cart:", errorData);
       }
     } catch (error) {
       console.error("Error adding to cart:", error);
     }
   };
+
   return (
     <div className="flex items-center w-full justify-center mt-6 mb-3">
       <Button
