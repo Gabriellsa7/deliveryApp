@@ -99,17 +99,17 @@ const ProductPageInfo = () => {
       <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white py-5">
         <div className="flex items-center gap-3 mx-5">
           <div>
-            <Image
+            {/* <Image
               src={restaurants[product.id].img}
               alt="Logo"
               width={30}
               height={30}
               className="rounded-full object-cover"
-            />
+            /> */}
           </div>
-          <span className="font-normal text-xs">
+          {/* <span className="font-normal text-xs">
             {restaurants[product.id].name}
-          </span>
+          </span> */}
         </div>
         <div className="mx-5 mt-2 mb-3">
           <h1 className="text-xl font-bold">{product.name}</h1>
