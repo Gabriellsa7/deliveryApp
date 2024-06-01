@@ -56,7 +56,7 @@ const Infos = () => {
   }
 
   return (
-    <div>
+    <main>
       <div>
         <div className="relative h-[360px] w-full">
           <Image
@@ -93,7 +93,7 @@ const Infos = () => {
           <span className="font-bold text-base text-[#FFF]">5.0</span>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
