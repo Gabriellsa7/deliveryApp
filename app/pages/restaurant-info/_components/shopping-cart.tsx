@@ -31,7 +31,7 @@ const ShoppingCart = () => {
       }; // Safe quantity update and optional chaining
 
       // Update product quantity in database
-      const updateResponse = await fetch(`/api/products/${productId}`, {
+      const updateResponse = await fetch(`/api/products-cart/${productId}`, {
         // Replace with your update API endpoint
         method: "PATCH",
         body: JSON.stringify({ quantity: updatedProduct.quantity }),
@@ -69,7 +69,7 @@ const ShoppingCart = () => {
       }; // Safe quantity update and optional chaining
 
       // Update product quantity in database
-      const updateResponse = await fetch(`/api/products/${productId}`, {
+      const updateResponse = await fetch(`/api/products-cart/${productId}`, {
         method: "PATCH",
         body: JSON.stringify({ quantity: updatedProduct.quantity }),
       });
@@ -94,10 +94,29 @@ const ShoppingCart = () => {
       // Handle general error (e.g., display notification to user)
     }
   };
-  const handleRemoveProductClick = (productId: number) => {
-    setProducts((prevProducts) =>
-      prevProducts.filter((product) => product.id !== Number(productId))
-    );
+  const handleRemoveProductClick = async (productId: number) => {
+    try {
+      // Make an asynchronous API call to the backend to remove the product
+      const response = await fetch(`/api/products-cart/${productId}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        // Update the local product state if the API call was successful
+        setProducts((prevProducts) =>
+          prevProducts.filter((product) => product.id !== Number(productId))
+        );
+      } else {
+        console.error(
+          "Error removing product from database:",
+          await response.text()
+        );
+        // Handle API call error (e.g., display notification to user)
+      }
+    } catch (error) {
+      console.error("Error removing product from database:", error);
+      // Handle general error (e.g., network error, display notification to user)
+    }
   };
   return (
     <div className="my-6 px-5 w-full min-w-[280px]">
