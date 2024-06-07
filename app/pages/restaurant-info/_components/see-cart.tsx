@@ -1,12 +1,27 @@
 "use client";
 import { Button } from "@/app/_components/ui/button";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import x from "@/assets/Close.svg";
 import ShoppingCart from "./shopping-cart";
+import { Product } from "@/app/context/cart-context";
 
 const AddCartComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/api/products-cart"); // Replace with your API endpoint
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   const handleMenuHamburguer = () => {
     setIsOpen(!isOpen);
