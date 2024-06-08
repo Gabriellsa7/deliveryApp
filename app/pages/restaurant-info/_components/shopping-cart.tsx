@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/app/_components/ui/button";
 import { ChevronLeftIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
 import { Product } from "@/app/context/cart-context";
+import FinalizeOrder from "./finalize-order";
 
 const ShoppingCart = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -119,7 +120,7 @@ const ShoppingCart = () => {
     }
   };
   return (
-    <div className="my-6 px-5 w-full min-w-[280px]">
+    <div className="my-6 px-5 w-full min-w-[280px] flex flex-col justify-between h-full">
       {products.length > 0 ? (
         products.map((product) => (
           <div key={product.id} className="flex items-center gap-5 mb-5">
@@ -172,6 +173,7 @@ const ShoppingCart = () => {
       ) : (
         <p>No products in your cart.</p>
       )}
+      <FinalizeOrder />
     </div>
   );
 };
