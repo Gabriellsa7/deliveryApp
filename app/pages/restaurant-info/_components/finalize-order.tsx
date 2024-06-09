@@ -1,6 +1,18 @@
+"use client";
 import { Button } from "@/app/_components/ui/button";
+import OrderPlaced from "./order-placed";
+import { useState } from "react";
 
 const FinalizeOrder = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleFinalizeOrder = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   return (
     <div className="mx-5 mb-8">
       <div className="mb-6">
@@ -21,9 +33,10 @@ const FinalizeOrder = () => {
           <span className="text-xs font-bold text-[#323232]">R$</span>
         </div>
       </div>
-      <Button className="w-full bg-[#EA1D2C]">
+      <Button className="w-full bg-[#EA1D2C]" onClick={handleFinalizeOrder}>
         <span className="font-bold text-white text-sm">Finalize Order</span>
       </Button>
+      <OrderPlaced isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };
