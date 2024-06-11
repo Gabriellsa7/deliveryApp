@@ -23,7 +23,7 @@ const AddCartButton = ({ product }: { product: Product }) => {
   }, []);
 
   const addToCart = async (product: Product) => {
-    const { id, name, price, quantity = 1 } = product;
+    const { id, name, price, quantity = 1, img } = product;
     const existingProduct = cart.find((item) => item.id === id);
 
     try {
@@ -32,7 +32,7 @@ const AddCartButton = ({ product }: { product: Product }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ productId: id, name, price, quantity }),
+        body: JSON.stringify({ productId: id, name, price, quantity, img }),
       });
 
       if (response.ok) {
