@@ -21,80 +21,11 @@ const ShoppingCart = () => {
     };
     fetchProducts();
   }, []);
-  const handleIncreaseQuantityClick = async (productId: number) => {
-    try {
-      const updatedProduct = {
-        ...products.find((product) => product.id === productId),
-        quantity: Math.max(
-          // products.find((product) => product.id === productId)!.quantity + 1,
-          1
-        ),
-      }; // Safe quantity update and optional chaining
 
-      // Update product quantity in database
-      const updateResponse = await fetch(`/api/products-cart/${productId}`, {
-        // Replace with your update API endpoint
-        method: "PATCH",
-        body: JSON.stringify({ quantity: updatedProduct.quantity }),
-      });
+  const handleIncreaseQuantityClick = async (productId: number) => {};
 
-      if (updateResponse.ok) {
-        setProducts((prevProducts) =>
-          prevProducts.map((product) =>
-            product.id === productId
-              ? { ...product, quantity: Math.max(product.quantity ? +1 : 1) } // Spread operator and update quantity
-              : product
-          )
-        );
-      } else {
-        console.error(
-          "Error updating product quantity:",
-          await updateResponse.text()
-        );
-        // Handle update error (e.g., display notification to user)
-      }
-    } catch (error) {
-      console.error("Error updating product quantity:", error);
-      // Handle general error (e.g., display notification to user)
-    }
-  };
+  const handleDecreaseQuantityClick = async (productId: number) => {};
 
-  const handleDecreaseQuantityClick = async (productId: number) => {
-    try {
-      const updatedProduct = {
-        ...products.find((product) => product.id === productId),
-        quantity: Math.max(
-          // products.find((product) => product.id === productId)!.quantity - 1,
-          0
-        ),
-      }; // Safe quantity update and optional chaining
-
-      // Update product quantity in database
-      const updateResponse = await fetch(`/api/products-cart/${productId}`, {
-        method: "PATCH",
-        body: JSON.stringify({ quantity: updatedProduct.quantity }),
-      });
-
-      if (updateResponse.ok) {
-        setProducts((prevProducts) =>
-          prevProducts.map((product) =>
-            product.id === productId
-              ? { ...product, quantity: Math.max(product.quantity ? +1 : 1) } // Spread operator and update quantity
-              : product
-          )
-        );
-      } else {
-        console.error(
-          "Error updating product quantity:",
-          await updateResponse.text()
-        );
-        // Handle update error (e.g., display notification to user)
-      }
-    } catch (error) {
-      console.error("Error updating product quantity:", error);
-      // Handle general error (e.g., display notification to user)
-    }
-  };
   const handleRemoveProductClick = async (productId: number) => {
     try {
       // Make an asynchronous API call to the backend to remove the product
@@ -120,59 +51,65 @@ const ShoppingCart = () => {
     }
   };
   return (
-    <div className="my-6 px-5 w-full min-w-[280px] flex flex-col justify-between h-full">
-      {products.length > 0 ? (
-        products.map((product) => (
-          <div key={product.id} className="flex items-center gap-5 mb-5">
-            <div className="relative h-20 w-20">
-              {product.img && product.name && (
-                <Image
-                  src={product.img} // Replace with dynamic image URL
-                  alt={product.name}
-                  className="rounded-lg"
-                  fill
-                  sizes="100%"
-                />
-              )}
-            </div>
-            <div className="flex flex-col gap-1">
-              <span>{product.name}</span>
-              <div className="flex items-center gap-1">
-                <span>R${product.price?.toFixed(2)}</span>
-                {/* Optional: Discounted price logic */}
+    <div className="my-6 px-5 w-full flex flex-col justify-between h-full">
+      <div className="flex flex-col gap-5 min-w-[280px]">
+        {products.length > 0 ? (
+          products.map((product) => (
+            <div key={product.id} className="flex items-center gap-5">
+              <div className="relative h-20 w-20">
+                {product.img && product.name ? (
+                  <Image
+                    src={product.img}
+                    alt={product.name}
+                    className="rounded-lg"
+                    fill
+                    sizes="100%"
+                  />
+                ) : (
+                  <div className="bg-gray-200 rounded-lg h-full w-full">
+                    img not found
+                  </div>
+                )}
               </div>
-              <div className="flex items-center gap-3 text-center">
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="h-7 w-7 border border-solid border-muted-foreground"
-                  onClick={() => handleDecreaseQuantityClick(product.id)}
-                >
-                  <ChevronLeftIcon />
-                </Button>
-                <span className="block w-8 text-xs">{product.quantity}</span>
-                <Button
-                  className="bg-[#EA1D2C] h-7 w-7"
-                  size="icon"
-                  onClick={() => handleIncreaseQuantityClick(product.id)}
-                >
-                  <ChevronRightIcon />
-                </Button>
+              <div className="flex flex-col gap-1">
+                <span>{product.name}</span>
+                <div className="flex items-center gap-1">
+                  <span>R${product.price?.toFixed(2)}</span>
+                  {/* Optional: Discounted price logic */}
+                </div>
+                <div className="flex items-center gap-3 text-center">
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="h-7 w-7 border border-solid border-muted-foreground"
+                    onClick={() => handleDecreaseQuantityClick(product.id)}
+                  >
+                    <ChevronLeftIcon />
+                  </Button>
+                  <span className="block w-8 text-xs">{product.quantity}</span>
+                  <Button
+                    className="bg-[#EA1D2C] h-7 w-7"
+                    size="icon"
+                    onClick={() => handleIncreaseQuantityClick(product.id)}
+                  >
+                    <ChevronRightIcon />
+                  </Button>
+                </div>
               </div>
+              <Button
+                size="icon"
+                variant="ghost"
+                className="h-7 w-7 border border-solid border-muted-foreground"
+                onClick={() => handleRemoveProductClick(product.id)}
+              >
+                <TrashIcon size={16} />
+              </Button>
             </div>
-            <Button
-              size="icon"
-              variant="ghost"
-              className="h-7 w-7 border border-solid border-muted-foreground"
-              onClick={() => handleRemoveProductClick(product.id)}
-            >
-              <TrashIcon size={16} />
-            </Button>
-          </div>
-        ))
-      ) : (
-        <p>No products in your cart.</p>
-      )}
+          ))
+        ) : (
+          <p>No products in your cart.</p>
+        )}
+      </div>
       <FinalizeOrder />
     </div>
   );
