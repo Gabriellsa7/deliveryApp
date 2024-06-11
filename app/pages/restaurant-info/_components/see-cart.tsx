@@ -53,20 +53,27 @@ const AddCartComponent = () => {
           </div>
         </>
       ) : (
-        <div className="flex bg-white w-full justify-between items-center py-4 px-6 fixed bottom-0 z-30">
-          <div>
-            <span>Total without delivery</span>
-            <div className="flex items-center gap-1 ">
-              <span>R$ 30,00</span>
-              <span>/ 1 item</span>
+        products.length > 0 && (
+          <div className="flex bg-white w-full justify-between items-center py-4 px-6 fixed bottom-0 z-30">
+            <div>
+              <span>Total without delivery</span>
+              <div className="flex items-center gap-1 ">
+                <span>
+                  R${" "}
+                  {products
+                    .reduce((total, product) => total + (product.price ?? 0), 0)
+                    .toFixed(2)}
+                </span>
+                <span>/ {products.length} item</span>
+              </div>
+            </div>
+            <div>
+              <Button className="bg-[#EA1D2C]" onClick={handleMenuHamburguer}>
+                See Cart
+              </Button>
             </div>
           </div>
-          <div>
-            <Button className="bg-[#EA1D2C]" onClick={handleMenuHamburguer}>
-              See Cart
-            </Button>
-          </div>
-        </div>
+        )
       )}
     </div>
   );
