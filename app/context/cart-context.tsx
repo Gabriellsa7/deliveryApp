@@ -8,6 +8,8 @@ export interface Product {
   img?: string | StaticImageData;
   price?: number | 0;
   quantity?: number;
+  discount?: boolean;
+  discountPercent?: number;
 }
 
 interface CartContextType {
