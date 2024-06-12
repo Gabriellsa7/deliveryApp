@@ -52,7 +52,7 @@ const ShoppingCart = () => {
   };
   return (
     <div className="my-6 px-5 w-full flex flex-col justify-between h-full">
-      <div className="flex flex-col gap-5 min-w-[280px]">
+      <div className="flex flex-col gap-5 ">
         {products.length > 0 ? (
           products.map((product) => (
             <div key={product.id} className="flex items-center gap-5">
@@ -72,9 +72,20 @@ const ShoppingCart = () => {
                 )}
               </div>
               <div className="flex flex-col gap-1">
-                <span>{product.name}</span>
+                <div className="min-w-[112px]">
+                  <span className="text-xs font-normal">{product.name}</span>
+                </div>
                 <div className="flex items-center gap-1">
-                  <span>R${product.price?.toFixed(2)}</span>
+                  <span className="font-bold text-sm">
+                    R${product.price?.toFixed(2)}
+                  </span>
+                  {product.discount === true ? (
+                    <span className="font-bold text-xs">
+                      R${product.price?.toFixed(2)}
+                    </span>
+                  ) : (
+                    ""
+                  )}
                   {/* Optional: Discounted price logic */}
                 </div>
                 <div className="flex items-center gap-3 text-center">
@@ -96,14 +107,16 @@ const ShoppingCart = () => {
                   </Button>
                 </div>
               </div>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="h-7 w-7 border border-solid border-muted-foreground"
-                onClick={() => handleRemoveProductClick(product.id)}
-              >
-                <TrashIcon size={16} />
-              </Button>
+              <div>
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  className="h-7 w-7 border border-solid border-muted-foreground"
+                  onClick={() => handleRemoveProductClick(product.id)}
+                >
+                  <TrashIcon size={16} />
+                </Button>
+              </div>
             </div>
           ))
         ) : (
