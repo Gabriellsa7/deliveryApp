@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import x from "@/assets/Close.svg";
 import ShoppingCart from "./shopping-cart";
 import { Product } from "@/app/context/cart-context";
+import { ProductPageProps } from "../../product-info/page";
 
 const AddCartComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductPageProps[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
