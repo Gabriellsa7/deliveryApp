@@ -82,7 +82,7 @@ const ProductPageInfo = () => {
     <div>
       <div className="relative h-[360px] w-full">
         <Image
-          src={product?.img as string}
+          src={product?.img || "/"}
           alt="Product image"
           sizes="100%"
           className="object-cover"
