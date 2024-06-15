@@ -37,7 +37,7 @@ const AddCartButton = ({ product }: { product: Product }) => {
           name,
           price,
           quantity,
-          img,
+          img: JSON.stringify(img) || null,
           discount,
         }),
       });
