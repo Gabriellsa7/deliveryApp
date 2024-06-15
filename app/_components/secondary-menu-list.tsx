@@ -10,7 +10,7 @@ import {
 
 const SecondaryMenuList = () => {
   return (
-    <div className="flex flex-col gap-2 px-5 w-full mb-12">
+    <div className="flex flex-col gap-2 px-5 w-full mb-6">
       <div className="flex items-center gap-4 py-3 px-4 rounded-2xl ">
         <UtensilsIcon size={16} color="#323232" />
         <p className="text-[#323232] font-normal text-sm">Dish</p>
