@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "@/app/_components/ui/button";
 import { ChevronLeftIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
-import { Product } from "@/app/context/cart-context";
 import FinalizeOrder from "./finalize-order";
+import { ProductPageProps } from "../../product-info/page";
 
 const ShoppingCart = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductPageProps[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -62,8 +62,8 @@ const ShoppingCart = () => {
                     src={product.img}
                     alt={product.name}
                     className="rounded-lg"
-                    fill
-                    sizes="100%"
+                    width={300}
+                    height={300}
                   />
                 ) : (
                   <div className="bg-gray-200 rounded-lg h-full w-full">
