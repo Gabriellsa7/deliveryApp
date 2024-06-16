@@ -30,6 +30,7 @@ const japaneseFoods = [
     img: japanese2,
     price: 12,
     discount: true,
+    discountPercent: 0.2,
     discountValue: "20%",
   },
   {
@@ -38,6 +39,7 @@ const japaneseFoods = [
     img: japanese3,
     price: 12,
     discount: true,
+    discountPercent: 0.2,
     discountValue: "20%",
   },
   {
@@ -46,6 +48,7 @@ const japaneseFoods = [
     img: japanese4,
     price: 12,
     discount: true,
+    discountPercent: 0.2,
     discountValue: "20%",
   },
   {
@@ -54,6 +57,7 @@ const japaneseFoods = [
     img: japanese5,
     price: 12,
     discount: true,
+    discountPercent: 0.2,
     discountValue: "20%",
   },
 ];
