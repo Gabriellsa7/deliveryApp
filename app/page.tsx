@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <FavoritesProvider>
       <CartProvider>
-        <Header />
+        <header className="px-5 pt-2">
+          <Header />
+        </header>
         <div className="px-5 pt-2">
           <Search />
         </div>
