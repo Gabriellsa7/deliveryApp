@@ -9,7 +9,7 @@ const JuicesPage = () => {
     <main className="mx-5">
       <Header />
       <div>
-        <h1 className="font-bold text-lg text-[#323232]">Japanese Food</h1>
+        <h1 className="font-bold text-lg text-[#323232]">Juices</h1>
       </div>
       <div className="grid grid-cols-2 gap-4 py-6">
         {juices.map((product) => (
