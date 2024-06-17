@@ -26,7 +26,7 @@ const FavoriteRestaurantsContent = () => {
     removeFavorites(recipeId);
   };
   return (
-    <>
+    <main>
       <Header />
       <div className="flex flex-col mt-6 mx-5 gap-6">
         <h1 className="font-bold text-lg text-[#323232]">
@@ -77,7 +77,7 @@ const FavoriteRestaurantsContent = () => {
             </div>
           ))}
       </div>
-    </>
+    </main>
   );
 };
 
