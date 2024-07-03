@@ -10,10 +10,12 @@ const PrimaryMenuList = () => {
           <p className="text-white font-bold text-sm">Home</p>
         </div>
       </Link>
-      <div className="flex items-center gap-4 py-3 px-4 rounded-2xl ">
-        <ScrollTextIcon size={16} color="#323232" />
-        <p className="text-[#323232] font-normal text-sm">My requests</p>
-      </div>
+      <Link href="/pages/my-requests">
+        <div className="flex items-center gap-4 py-3 px-4 rounded-2xl ">
+          <ScrollTextIcon size={16} color="#323232" />
+          <p className="text-[#323232] font-normal text-sm">My requests</p>
+        </div>
+      </Link>
       <Link href="/pages/favorite-restaurants">
         <div className="flex items-center gap-4 py-3 px-4 rounded-2xl ">
           <HeartIcon size={16} color="#323232" />
