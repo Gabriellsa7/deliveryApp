@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import juices from "../pages/product-info/_components/mocks/juices-list";
+import juices from "./_lists/juices-list";
 import Image from "next/image";
 
 const Juices = () => {
