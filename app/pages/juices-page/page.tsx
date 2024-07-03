@@ -2,7 +2,7 @@ import Header from "@/app/_components/header";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import juices from "../product-info/_components/mocks/juices-list";
+import juices from "../../_components/_lists/juices-list";
 
 const JuicesPage = () => {
   return (
