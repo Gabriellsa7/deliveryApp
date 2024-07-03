@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import restaurants from "./_lists/recommended-restaurant-listing";
-import Link from "next/link";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { useFavorites } from "../context/favorite-context";
 
