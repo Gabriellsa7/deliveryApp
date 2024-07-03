@@ -1,5 +1,4 @@
 "use client";
-import restaurants from "@/app/_components/_lists/recommended-restaurant-listing";
 import Header from "@/app/_components/header";
 import {
   FavoritesProvider,
