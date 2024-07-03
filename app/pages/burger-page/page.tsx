@@ -1,5 +1,4 @@
 import burgers from "@/app/_components/_lists/burgers-listing";
-import japaneseFoods from "@/app/_components/_lists/japanese-listing";
 import Header from "@/app/_components/header";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";

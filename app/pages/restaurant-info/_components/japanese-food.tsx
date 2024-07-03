@@ -1,5 +1,4 @@
 import japaneseFoods from "@/app/_components/_lists/japanese-listing";
-import products from "@/app/_components/_lists/recommended-listing";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

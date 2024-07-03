@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import x from "@/assets/Close.svg";
 import ShoppingCart from "./shopping-cart";
-import { Product } from "@/app/context/cart-context";
 import { ProductPageProps } from "../../product-info/page";
 
 const AddCartComponent = () => {
