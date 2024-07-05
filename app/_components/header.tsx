@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between py-6 relative">
+    <header className="flex items-center justify-between pt-4 pb-1 relative">
       <div>
         <Image width={100} height={30} src={"/Logo.svg"} alt="Logo" />
       </div>
