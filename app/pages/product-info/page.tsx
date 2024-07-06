@@ -10,6 +10,7 @@ import DeliveryInfo from "./_components/delivery-info";
 import About from "./_components/about";
 import Juices from "@/app/_components/juices";
 import AddCartButton from "./_components/add-cart-button";
+import generalFoods from "@/app/_components/_lists/general-foods-list";
 
 export interface ProductPageProps {
   id: number;
@@ -40,19 +41,21 @@ const ProductPageInfo = () => {
         const name = urlParams.get("name") || product?.name;
 
         // Combine recipes and recentRecipes into one array
-        const generalRecipes: ProductPageProps[] = [
-          ...products,
-          ...restaurants,
-        ];
+        const foods: ProductPageProps[] = [...products, ...restaurants];
+        const generalFoods2 = [...generalFoods, ...restaurants];
 
         // Find the recipe based on the name in the combined list
-        const productData = generalRecipes.find(
+        const productData = foods.find((product) => product.name === name);
+        const productDataFoods = generalFoods2.find(
           (product) => product.name === name
         );
 
         if (productData) {
           // Define product data in the state
           setProduct(productData);
+        } else if (productDataFoods) {
+          // Define product data in the state
+          setProduct(productDataFoods);
         } else {
           console.error("Recipe not found");
         }
