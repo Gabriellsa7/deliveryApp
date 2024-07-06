@@ -1,7 +1,7 @@
 "use client";
 import { LogOutIcon, MenuIcon } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import x from "@/assets/Close.svg";
 import Profile from "./profile";
@@ -13,13 +13,17 @@ const Header = () => {
 
   const handleMenuHamburguer = () => {
     setIsOpen(!isOpen);
-    // document.body.classList.add("overflow-hidden");
+    document.body.classList.add("overflow-hidden");
   };
 
   const handleCloseMenu = () => {
     setIsOpen((isOpen) => !isOpen);
-    // document.body.classList.remove("overflow-hidden");
+    document.body.classList.remove("overflow-hidden");
   };
+
+  useEffect(() => {
+    document.body.classList.remove("overflow-hidden");
+  }, []);
 
   return (
     <header className="flex items-center justify-between pt-4 pb-1 relative">
