@@ -12,27 +12,32 @@ export default function Home() {
   return (
     <FavoritesProvider>
       <CartProvider>
-        <header className="px-5 pt-2">
-          <Header />
-        </header>
-        <div className="px-5 pt-2">
-          <Search />
-        </div>
-        <div className="px-5 pt-6">
-          <CategoryList />
-        </div>
-        <div className="px-5 pt-6">
-          <PromoBanner src={"/PromoBanner1.svg"} alt="Up to 30% off" />
-        </div>
-        <div className="px-5 pt-6">
-          <Recommended />
-        </div>
-        <div className="px-5 pt-6">
-          <PromoBanner src={"/PromoBanner2.svg"} alt="From R$17.90 on snacks" />
-        </div>
-        <div className="px-5 pt-6 pb-9">
-          <RecommendedRestaurants />
-        </div>
+        <main>
+          <header className="px-5 pt-2">
+            <Header />
+          </header>
+          <div className="px-5 pt-2">
+            <Search />
+          </div>
+          <div className="px-5 pt-6">
+            <CategoryList />
+          </div>
+          <div className="px-5 pt-6">
+            <PromoBanner src={"/PromoBanner1.svg"} alt="Up to 30% off" />
+          </div>
+          <div className="px-5 pt-6">
+            <Recommended />
+          </div>
+          <div className="px-5 pt-6">
+            <PromoBanner
+              src={"/PromoBanner2.svg"}
+              alt="From R$17.90 on snacks"
+            />
+          </div>
+          <div className="px-5 pt-6 pb-9">
+            <RecommendedRestaurants />
+          </div>
+        </main>
       </CartProvider>
     </FavoritesProvider>
   );
