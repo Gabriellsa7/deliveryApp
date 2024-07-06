@@ -22,7 +22,7 @@ const FilteredSearch = ({ filteredRecipes }: Props) => {
         filteredRecipes.map((generalFoods) => (
           <Link
             key={generalFoods.id}
-            href={`/pages/recipePageInformation?name=${generalFoods.name}&img=${generalFoods.img}`}
+            href={`../pages/product-info?name=${generalFoods.name}&img=${generalFoods.img}`}
           >
             <section
               key={generalFoods.id}
