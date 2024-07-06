@@ -5,6 +5,7 @@ import { Input } from "./ui/input";
 import { SearchIcon } from "lucide-react";
 import FilteredSearch from "./filtered-searches";
 import generalFoods from "./_lists/general-foods-list";
+import products from "./_lists/recommended-listing";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -31,7 +32,7 @@ const Search = () => {
       <div
         className={` ${
           search === "" ? "hidden" : "block"
-        } border-t-[3px] border-b-[1px] border-x-[3px] border-red-300 absolute top-[80px] w-[245px] overflow-auto bg-white rounded-md z-10 min-[320px]:top-[50px] min-[320px]:w-[300px] min-[320px]:max-h-[250px] min-[320px]: min-[768px]:top-[120px] min-[1024px]:top-[80px]`}
+        } border-t-[3px] border-b-[1px] border-x-[3px] border-red-300 absolute top-[80px] w-[245px] overflow-auto overflow-x-hidden bg-white rounded-md z-10 min-[320px]:top-[50px] min-[320px]:w-[300px] min-[320px]:max-h-[250px] min-[320px]: min-[768px]:top-[120px] min-[1024px]:top-[80px]`}
       >
         <FilteredSearch filteredRecipes={filteredRecipes} />
       </div>
