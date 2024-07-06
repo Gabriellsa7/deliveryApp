@@ -13,12 +13,12 @@ const Header = () => {
 
   const handleMenuHamburguer = () => {
     setIsOpen(!isOpen);
-    document.body.classList.add("overflow-hidden");
+    // document.body.classList.add("overflow-hidden");
   };
 
   const handleCloseMenu = () => {
     setIsOpen((isOpen) => !isOpen);
-    document.body.classList.remove("overflow-hidden");
+    // document.body.classList.remove("overflow-hidden");
   };
 
   return (
@@ -47,7 +47,7 @@ const Header = () => {
               </div>
               <PrimaryMenuList />
               <SecondaryMenuList />
-              <div className="flex flex-col gap-4 pt-1 px-5 w-full">
+              <div className="flex flex-col gap-4 pt-1 pb-4 px-5 w-full">
                 <div className="flex items-center gap-4 py-1 px-4 rounded-2xl ">
                   <LogOutIcon size={16} color="#323232" />
                   <p className="text-sm font-normal text-[#323232]">
