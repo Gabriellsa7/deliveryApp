@@ -1,3 +1,35 @@
+# Delivery App
+
+## Description
+
+This is a mobile-focused delivery app developed with **Next.js**, **TypeScript**, and **Tailwind CSS**. The app allows users to browse a list of food items, choose restaurants, and leave reviews. The application is deployed using **Netlify**.
+
+## Features
+
+- **Food Listing:** Browse through a variety of dishes available for delivery.
+- **Restaurant Selection:** Choose from multiple restaurants offering the listed dishes.
+- **Restaurant Reviews:** Rate your experience with the restaurants, helping other users decide where to order from.
+
+## Technologies Used
+
+- **Next.js:** React framework for front-end development.
+- **TypeScript:** A superset of JavaScript that adds static typing to the code.
+- **Tailwind CSS:** Utility-first CSS framework for fast and customizable styling.
+- **Netlify:** Platform used for deploying the application.
+
+## Deployment
+
+The application is deployed on Netlify, ensuring it's always accessible and available.
+
+[Link to the application](https://deliveryappboruto.netlify.app)
+
+## How to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/yourrepository.git
+
+
 - This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
