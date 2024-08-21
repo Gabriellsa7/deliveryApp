@@ -2,7 +2,6 @@
 import { Button } from "@/app/_components/ui/button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import x from "@/assets/Close.svg";
 import ShoppingCart from "./shopping-cart";
 import { ProductPageProps } from "../../product-info/page";
 
@@ -46,7 +45,7 @@ const AddCartComponent = () => {
             <div className="flex items-center justify-between w-full pt-6 px-5">
               <h2>Shopping Cart</h2>
               <button onClick={handleCloseMenu}>
-                <Image src={x} alt="close" width={20} height={20} />
+                {/* <Image src={x} alt="close" width={20} height={20} /> */}X
               </button>
             </div>
             <ShoppingCart />
